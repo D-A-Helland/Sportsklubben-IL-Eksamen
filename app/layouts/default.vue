@@ -24,7 +24,20 @@ import type { NavigationMenuItem } from '@nuxt/ui';
 
 const route = useRoute()
 
-const links = computed<NavigationMenuItem[]>(() => [
-  { label: 'Home', to: '/', active: route.path === '/' },
+const { data: user } = await useFetch('/api/auth/me')
+
+const links = computed<NavigationMenuItem[][]>(() => [
+  [
+    { label: 'Hjem', to: '/' },
+
+    !user.value && { label: 'Login', to: '/login' },
+    !user.value && { label: 'Registrer', to: '/register' },
+
+    user.value?.rolle === 'admin' && { label: 'Admin', to: '/admin' },
+
+    user.value && { label: 'Profile', to: `/profile/${user.value.id}` },
+    user.value && { label: 'Kurs', to: '/courses' },
+    user.value && { label: 'Logg ut', to: '/logout' },
+  ].filter(Boolean) as NavigationMenuItem[],
 ])
 </script>
