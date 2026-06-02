@@ -8,10 +8,20 @@ datasource db {
 }
 
 model brukere {
-  id           Int     @id @default(autoincrement())
-  navn         String  @db.VarChar(255)
-  tlf          String? @db.VarChar(50)
-  epost        String  @unique @db.VarChar(255)
+  id           Int       @id @default(autoincrement())
+  navn         String
+  epost        String    @unique
+  tlf          String?
   passord_hash String
-  rolle        String  @default("user") @db.VarChar(50)
+  godkjent     Boolean   @default(false)
+  rolle        String    @default("bruker")
+  tickets      tickets[]
+}
+
+model tickets {
+  id         Int       @id @default(autoincrement())
+  godkjent   Boolean   @default(false)
+  created_at DateTime? @default(now()) @db.Timestamp(6)
+  bruker_id  Int
+  brukere    brukere   @relation(fields: [bruker_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "bruker_tickets")
 }
