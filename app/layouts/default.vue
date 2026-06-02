@@ -2,7 +2,7 @@
   <UContainer>
     <UHeader>
       <template #title>
-        <h1 class="text-2xl font-bold">Nuxt App</h1>
+        <h1 class="text-2xl font-bold">Sportsklubben IL</h1>
       </template>
 
       <UNavigationMenu :items="links" />
@@ -34,7 +34,6 @@ const links = computed<NavigationMenuItem[][]>(() => [
     user.value?.rolle === 'admin' && { label: 'Admin', to: '/admin' },
 
     user.value && { label: 'Profile', to: `/profile/${user.value.id}` },
-    user.value && { label: 'Kurs', to: '/courses' },
     user.value && { label: 'Logg ut', to: '/logout' },
   ].filter(Boolean) as NavigationMenuItem[],
 ])
