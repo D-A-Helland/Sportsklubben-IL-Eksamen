@@ -1,57 +1,46 @@
-<script setup lang="ts">
-import type { TableColumn } from '@nuxt/ui'
-
-const isAdmin = true
-
-type User = {
-  id: number
-  navn: string
-  epost: string
-  rolle: string
-}
-
-const { data: users, pending, error, refresh } = await useFetch<User[]>('/api/users')
-
-const columns: TableColumn<User>[] = [
-  { accessorKey: 'navn', header: 'Navn' },
-  { accessorKey: 'epost', header: 'E-post' },
-  { accessorKey: 'rolle', header: 'Rolle' },
-  { id: 'actions', header: 'Handlinger' },
-]
-
-const inspectUser = (id: number) => navigateTo(`/profile/${id}`)
-
-const deleteUser = async (id: number) => {
-  if (!confirm('Er du sikker på at du vil slette brukeren?')) return
-  await $fetch(`/api/users/${id}`, { method: 'DELETE' })
-  await refresh()
-}
-</script>
-
 <template>
-  <UContainer>
-    <h1 class="text-2xl font-bold mb-4">Brukere</h1>
+  <UContainer class="py-10">
+    <div class="mb-8">
+      <h1 class="text-4xl font-bold">Admin Panel</h1>
+      <p>
+        Administrer brukere og godkjenn tilgang til serveren
+      </p>
+    </div>
 
-    <div v-if="pending">Laster...</div>
-    <div v-else-if="error">Noe gikk galt</div>
+    <div class="grid gap-6 md:grid-cols-2">
+      <NuxtLink to="/admin/users" class="group">
+        <UCard class="h-full transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-xl">
+          <div class="flex items-center gap-4">
+            <div class="rounded-xl bg-primary/10 p-3">
+              <UIcon name="i-heroicons-users" class="size-7 text-primary" />
+            </div>
 
-    <UTable v-else :data="users || []" :columns="columns" :ui="{ td: 'text-highlighted' }">
-      <template #rolle-cell="{ row }">
-        <UBadge v-if="row.original.rolle === 'admin'" color="primary">
-          Admin
-        </UBadge>
-        <UBadge v-else-if="row.original.rolle !== 'admin'" color="secondary">
-          Ansatt
-        </UBadge>
-      </template>
+            <div>
+              <h2 class="text-xl font-semibold">Users</h2>
+              <p>
+                Se og administrer registrerte brukere
+              </p>
+            </div>
+          </div>
+        </UCard>
+      </NuxtLink>
 
-      <template #actions-cell="{ row }">
-        <div class="flex gap-2">
-          <UButton size="xs" icon="i-heroicons-magnifying-glass" variant="soft" @click="inspectUser(row.original.id)" />
-          <UButton v-if="isAdmin" size="xs" icon="i-heroicons-trash" variant="soft" color="error"
-            @click="deleteUser(row.original.id)" />
-        </div>
-      </template>
-    </UTable>
+      <NuxtLink to="/admin/approve" class="group">
+        <UCard class="h-full transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-xl">
+          <div class="flex items-center gap-4">
+            <div class="rounded-xl bg-success/10 p-3">
+              <UIcon name="i-heroicons-check-badge" class="size-7 text-success" />
+            </div>
+
+            <div>
+              <h2 class="text-xl font-semibold">Approvals</h2>
+              <p>
+                Se gjennom og godkjenn tilgang til serveren
+              </p>
+            </div>
+          </div>
+        </UCard>
+      </NuxtLink>
+    </div>
   </UContainer>
 </template>

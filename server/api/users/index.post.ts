@@ -29,11 +29,14 @@ export default defineEventHandler(async (event) => {
         navn,
         tlf,
         epost,
-        passord_hash: hashed
+        passord_hash: hashed,
+        rolle: 'bruker'
       }
     })
 
     return { user }
   })
+
+  return result
 
 })
