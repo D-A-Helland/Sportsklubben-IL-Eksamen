@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS tickets (
 	id SERIAL PRIMARY KEY,
 	godkjent BOOLEAN NOT NULL DEFAULT FALSE,
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	bruker_id bigint NOT NULL,
+	bruker_id INT NOT NULL,
 	CONSTRAINT bruker_tickets
 		FOREIGN KEY (bruker_id)
 		REFERENCES brukere(id)
