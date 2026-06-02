@@ -22,8 +22,6 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui';
 
-const route = useRoute()
-
 const { data: user } = await useFetch('/api/auth/me')
 
 const links = computed<NavigationMenuItem[][]>(() => [
