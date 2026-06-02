@@ -16,7 +16,7 @@
             </div>
 
             <div>
-              <h2 class="text-xl font-semibold">Users</h2>
+              <h2 class="text-xl font-semibold">Brukere</h2>
               <p>
                 Se og administrer registrerte brukere
               </p>
@@ -33,7 +33,7 @@
             </div>
 
             <div>
-              <h2 class="text-xl font-semibold">Approvals</h2>
+              <h2 class="text-xl font-semibold">Godkjenn</h2>
               <p>
                 Se gjennom og godkjenn tilgang til serveren
               </p>
