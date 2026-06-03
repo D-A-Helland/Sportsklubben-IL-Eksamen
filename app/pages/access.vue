@@ -7,6 +7,8 @@ const requestAccess = async () => {
       bruker_id: user.value?.id
     }
   })
+
+  await navigateTo('/')
 }
 </script>
 
