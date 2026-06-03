@@ -16,7 +16,7 @@ Vi ønsker at alle som har godkjent tilgang skal få muligheten til å starte se
 
 Det går for øyeblikket bare ann for administratorer å slette brukere og se på brukerprofiler, men hadde vi fortsatt med utviklingen av prosjektet hadde vi lagt til muligheten for administratorer å endre på rollen til andre brukere.
 
-## Reaktivitet når man ber om tilgang
+## Reaktivitet når ber om tilgang
 
 Vi har bare lagt til en redirect som sender brukeren fra tilgangsforespørselssiden til hjemmesiden når de har bedt om tilgang, men hadde vi hatt mer tid hadde vi heller vist en melding på skjermen som fortalte brukeren om de hadde en pågående fårespørsel.
 
@@ -31,3 +31,7 @@ Inne i /app/middleware ville vi ha laget en fil som heter profile.global.ts
 I denne filen ville vi ha fått tak i den innloggede brukeren med /server/api/auth/me. Der ville vi funnet ID-en og om brukeren var administrator
 
 Brukeren ville bare ha fått lov til å gå inn i profilen hvis ID-en til profilen var lik den ID-en til brukeren som var innlogget, administratorer ville ha hatt tilgang til alle profiler og uinloggede brukere ville ikke hatt tilgang til profiler.
+
+## Inputvalidering
+
+Når man fyller ut skjemaet for å registrere en bruker er det ingen validering for at man skriver inn en gyldig e-post ellet telefonnummer.

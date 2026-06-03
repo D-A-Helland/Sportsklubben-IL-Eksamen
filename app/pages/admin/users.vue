@@ -40,7 +40,10 @@ const deleteUser = async (id: number) => {
         <UBadge v-if="row.original.rolle === 'admin'" color="primary">
           Admin
         </UBadge>
-        <UBadge v-else-if="row.original.rolle !== 'admin'" color="secondary">
+        <UBadge v-else-if="row.original.rolle === 'deltaker'" color="secondary">
+          Deltaker
+        </UBadge>
+        <UBadge v-else color="warning">
           Bruker
         </UBadge>
       </template>

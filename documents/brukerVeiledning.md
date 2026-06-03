@@ -41,13 +41,6 @@ For å få tilgang til medlemsområdet:
 
 3. Klikk på **Logg inn** når du har skrevet e-postadressen og passordet ditt.
 
-Ved vellykket innlogging blir du sendt til dashboardet.
-
----
-
-# Dashboard
-
-
 # Admin-veiledning – Sportsklubben IL
 
 ## Tilgang til Admin-panelet
@@ -80,8 +73,6 @@ Ved vellykket innlogging blir du sendt til dashboardet.
 - Vær forsiktig ved sletting av brukere
 
 ## Oversikt
-
-Dashboardet er hovedsiden for innloggede brukere.
 
 Her finner du:
 
