@@ -94,7 +94,7 @@ Her finner du:
 
 ## Server-IP
 
-Når du er logget inn vil serverens IP-adresse vises på dashboardet.
+Når du er logget inn og har fått godkjent tilgangsforespørsel vil serverens IP-adresse vises på info siden.
 
 Eksempel:
 
