@@ -33,3 +33,61 @@ Vi bruker Git til versjonskontroll, som hjelper oss med å holde styr på endrin
 ### npm
 
 Vi bruker npm til å installere og administrere pakkene og avhengighetene som prosjektet trenger.
+
+## Database
+
+Databasen består av to tabeller: Brukere og Tickets.
+
+![Bilde av ERD skjema](../documents/erd-schema.png)
+
+Eneste relasjonen i databasen er id fra brukere kobles til bruker_id i tickets som foreign key.
+
+Databasen er normalisert til 3NF, ettersom det er en veldig enkel database var ikke dette vanskelig å få til.
+
+## API-endepunkter
+
+API-et er delt inn i tre hovedområder: autentisering, brukere og tilgangsforespørsler.
+
+### Autentisering
+
+* **GET /api/auth/me** – Henter informasjon om innlogget bruker.
+* **POST /api/login** – Logger inn en bruker og oppretter en cookie.
+* **POST /api/logout** – Logger ut brukeren.
+
+### Brukere
+
+* **GET /api/users** – Henter alle brukere.
+* **GET /api/users/[id]** – Henter én spesifikk bruker.
+* **POST /api/users** – Registrerer en ny bruker.
+* **DELETE /api/users/[id]** – Sletter en bruker.
+* **PUT /api/users/rolle** – Oppdaterer en brukers rolle til deltaker.
+
+### Tilgangsforespørsler
+
+* **GET /api/tickets** – Henter alle tilgangsforespørsler.
+* **GET /api/tickets/[id]** – Henter én forespørsel.
+* **POST /api/tickets** – Oppretter en ny tilgangsforespørsel.
+* **DELETE /api/tickets** – Sletter en tilgangsforespørsel etter behandling.
+
+
+## Autentisering og autorisering
+
+* Innlogging med e-post og passord
+* Passord verifiseres mot lagret hash
+* HTTP-only cookie brukes til å holde brukeren innlogget
+* `/api/auth/me` brukes til å hente innlogget bruker
+* Rollebasert tilgangskontroll
+
+  * `bruker`
+  * `deltaker`
+  * `admin`
+* Middleware beskytter sider basert på rolle
+
+## Sikkerhet
+
+* Passord hashes før lagring i databasen
+* Passord lagres aldri i klartekst
+* HTTP-only cookies beskytter mot tilgang fra JavaScript
+* Validering av innloggingsinformasjon
+* Rollebasert tilgang til administrative funksjoner
+* Databasen bruker primærnøkler og relasjoner for å sikre dataintegritet

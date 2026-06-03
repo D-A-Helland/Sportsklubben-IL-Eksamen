@@ -34,7 +34,8 @@ const links = computed<NavigationMenuItem[][]>(() => [
     user.value?.rolle === 'admin' && { label: 'Admin', to: '/admin' },
 
     user.value && { label: 'Profil', to: `/profile/${user.value.id}` },
-    user.value && user.value.rolle !== 'admin' && { label: 'Tilgang', to: `/access` },
+    user.value && user.value?.rolle !== 'deltaker' && user.value?.rolle !== 'admin' && { label: 'Tilgang', to: `/access` },
+    user.value?.rolle === 'deltaker' && { label: 'Info', to: '/info' },
     user.value && { label: 'Logg ut', to: '/logout' },
   ].filter(Boolean) as NavigationMenuItem[],
 ])
