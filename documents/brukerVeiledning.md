@@ -47,6 +47,38 @@ Ved vellykket innlogging blir du sendt til dashboardet.
 
 # Dashboard
 
+
+# Admin-veiledning – Sportsklubben IL
+
+## Tilgang til Admin-panelet
+   For å få tak i en admin bruker, må man gå til backend for å  
+   redigere på databasen og gjør den til admin bruker
+1. Logg inn med en **admin-konto**.
+2. Klikk på **Admin** i toppmenyen.
+
+---
+
+## Funksjoner
+
+### Brukere
+- Se og administrer registrerte brukere  
+- Redigere informasjon  
+- Endre roller (admin-rettigheter)  
+- Deaktivere eller slette brukere
+
+### Godkjenn
+- Se nye søknader om servertilgang  
+- Godkjenne eller avslå tilgang  
+- Administrere tilgang til Minecraft-serveren
+
+---
+
+## Viktige tips
+- Gi admin-rettigheter kun til betrodde personer  
+- Sjekk **Godkjenn** jevnlig  
+- Hold brukerlisten ryddig  
+- Vær forsiktig ved sletting av brukere
+
 ## Oversikt
 
 Dashboardet er hovedsiden for innloggede brukere.
@@ -68,3 +100,4 @@ Eksempel:
 
 ```text
 play.sportsklubbenil.no
+
