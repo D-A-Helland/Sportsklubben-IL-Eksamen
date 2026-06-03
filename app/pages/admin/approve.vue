@@ -18,6 +18,8 @@ const approveRequest = async (ticketId: number) => {
       id: ticketId
     }
   })
+
+  await refreshNuxtData()
 }
 
 const columns = [

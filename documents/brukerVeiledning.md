@@ -100,4 +100,3 @@ Eksempel:
 
 ```text
 play.sportsklubbenil.no
-
