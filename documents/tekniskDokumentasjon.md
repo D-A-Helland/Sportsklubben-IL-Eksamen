@@ -16,7 +16,7 @@ Nitro er backend-løsningen som følger med Nuxt. Den gjør det enkelt å lage A
 
 ### Node.js og TypeScript
 
-Backenden kjører på Node.js, og vi bruker TypeScript som programmeringsspråk. TypeScript gjør koden mer oversiktlig og reduserer muligheten for feil ved hjelp av typesjekking.
+Backenden kjører på Node.js, og vi bruker TypeScript som programmeringsspråk. TypeScript gjør koden mer oversiktlig og reduserer muligheten for feil ved hjelp av type sjekking.
 
 ### Prisma
 
