@@ -4,45 +4,21 @@
       <div class="space-y-6">
         <h1 class="text-2xl font-bold">Login</h1>
 
-        <UForm
-          :state="form"
-          @submit="login"
-          class="space-y-4"
-        >
+        <UForm :state="form" @submit="login" class="space-y-4">
           <UFormField label="Epost">
-            <UInput
-              v-model="form.epost"
-              placeholder="Epost"
-              icon="i-lucide-mail"
-              class="w-84"
-            />
+            <UInput v-model="form.epost" placeholder="Epost" icon="i-lucide-mail" class="w-84" />
           </UFormField>
 
           <UFormField label="Passord">
-            <UInput
-              v-model="form.password"
-              type="password"
-              placeholder="Passord"
-              icon="i-lucide-lock"
-              class="w-84"
-            />
+            <UInput v-model="form.password" type="password" placeholder="Passord" icon="i-lucide-lock" class="w-84" />
           </UFormField>
 
-          <UButton
-            block
-            type="submit"
-            class="max-w-sm"
-          >
+          <UButton block type="submit" class="max-w-sm">
             Login
           </UButton>
         </UForm>
 
-        <UAlert
-          v-if="error"
-          color="red"
-          variant="soft"
-          :title="error"
-        />
+        <UAlert v-if="error" color="red" variant="soft" :title="error" />
       </div>
     </UCard>
   </UContainer>
