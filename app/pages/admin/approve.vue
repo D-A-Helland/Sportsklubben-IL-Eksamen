@@ -1,12 +1,15 @@
 <script setup lang="ts">
 const { data: tickets } = await useFetch('/api/tickets')
-const { data: user } = await useFetch('/api/auth/me')
 
 const approveRequest = async (ticketId: number) => {
+  const currentTicket = await $fetch(`/api/tickets/${ticketId}`, {
+    method: 'GET',
+  })
+
   await $fetch('/api/users/rolle', {
     method: 'PUT',
     body: {
-      id: user.value?.id
+      id: currentTicket?.bruker_id
     }
   })
   await $fetch('/api/tickets', {
