@@ -16,6 +16,7 @@ const createUser = async () => {
     })
 
     message.value = 'User created!'
+    await navigateTo('/login')
 
     form.value = {
       navn: '',
@@ -36,52 +37,24 @@ const createUser = async () => {
       <div class="space-y-6">
         <h1 class="text-2xl font-bold">Lag ny bruker</h1>
 
-        <UForm
-          :state="form"
-          @submit="createUser"
-          class="space-y-4"
-        >
+        <UForm :state="form" @submit="createUser" class="space-y-4">
           <UFormField label="Navn">
-            <UInput
-              v-model="form.navn"
-              placeholder="Navn"
-              icon="i-lucide-user"
-              class="w-84"
-            />
+            <UInput v-model="form.navn" placeholder="Navn" icon="i-lucide-user" class="w-84" />
           </UFormField>
 
           <UFormField label="Tlf">
-            <UInput
-              v-model="form.tlf"
-              placeholder="Tlf"
-              icon="i-lucide-phone"
-              class="w-84"
-            />
+            <UInput v-model="form.tlf" placeholder="Tlf" icon="i-lucide-phone" class="w-84" />
           </UFormField>
 
           <UFormField label="Epost">
-            <UInput
-              v-model="form.epost"
-              placeholder="Epost"
-              icon="i-lucide-mail"
-              class="w-84"
-            />
+            <UInput v-model="form.epost" placeholder="Epost" icon="i-lucide-mail" class="w-84" />
           </UFormField>
 
           <UFormField label="Passord">
-            <UInput
-              v-model="form.password"
-              type="password"
-              placeholder="Passord"
-              icon="i-lucide-lock"
-              class="w-84"
-            />
+            <UInput v-model="form.password" type="password" placeholder="Passord" icon="i-lucide-lock" class="w-84" />
           </UFormField>
 
-          <UButton
-            block
-            type="submit"
-          >
+          <UButton block type="submit">
             Opprett bruker
           </UButton>
         </UForm>
