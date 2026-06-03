@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS brukere (
 	passord_hash TEXT NOT NULL,
 	rolle TEXT NOT NULL DEFAULT 'bruker'
 	CONSTRAINT gyldig_rolle CHECK(
-		rolle IN ('admin','bruker'))
+		rolle IN ('admin','bruker','deltaker'))
 );
 CREATE TABLE IF NOT EXISTS tickets (
 	id SERIAL PRIMARY KEY,
@@ -17,3 +17,4 @@ CREATE TABLE IF NOT EXISTS tickets (
 		REFERENCES brukere(id)
 		ON DELETE CASCADE
 )
+
