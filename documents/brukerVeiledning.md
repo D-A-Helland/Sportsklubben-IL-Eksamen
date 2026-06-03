@@ -25,6 +25,8 @@ Dersom du er ny bruker må du registrere en konto.
    - Passord
 4. Klikk på **Opprett bruker**.
 
+![Bilde av registreringsskjema for bruker](../documents/{12E71F97-1E1C-4140-A2C3-59B6E770BC3F}.png)
+
 Når registreringen er fullført kan du logge inn i systemet.
 
 ---
@@ -40,6 +42,8 @@ For å få tilgang til medlemsområdet:
 2. Oppgi e-postadresse og passord som du har laget.
 
 3. Klikk på **Logg inn** når du har skrevet e-postadressen og passordet ditt.
+
+![Hvordan få full tilgang til nettsiden](../documents/{7A01974C-F58E-4E9C-AFE6-0434746D9832}.png)
 
 # Admin-veiledning – Sportsklubben IL
 
@@ -63,6 +67,8 @@ For å få tilgang til medlemsområdet:
 - Se nye søknader om servertilgang  
 - Godkjenne eller avslå tilgang  
 - Administrere tilgang til Minecraft-serveren
+
+![Bilde av adminpanelet](../documents/{817CCB32-755D-4A21-BAB3-4465D3444F7D}.png)
 
 ---
 
