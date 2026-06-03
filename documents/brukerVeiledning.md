@@ -51,6 +51,8 @@ Ved vellykket innlogging blir du sendt til dashboardet.
 # Admin-veiledning – Sportsklubben IL
 
 ## Tilgang til Admin-panelet
+   For å få tak i en admin bruker, må man gå til backend for å  
+   redigere på databasen og gjør den til admin bruker
 1. Logg inn med en **admin-konto**.
 2. Klikk på **Admin** i toppmenyen.
 
