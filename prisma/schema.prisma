@@ -13,7 +13,6 @@ model brukere {
   epost        String    @unique
   tlf          String?
   passord_hash String
-  godkjent     Boolean   @default(false)
   rolle        String    @default("bruker")
   tickets      tickets[]
 }
