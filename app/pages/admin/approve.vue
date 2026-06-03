@@ -1,5 +1,21 @@
 <script setup lang="ts">
 const { data: tickets } = await useFetch('/api/tickets')
+const { data: user } = await useFetch('/api/auth/me')
+
+const approveRequest = async (ticketId: number) => {
+  await $fetch('/api/users/rolle', {
+    method: 'PUT',
+    body: {
+      id: user.value?.id
+    }
+  })
+  await $fetch('/api/tickets', {
+    method: 'DELETE',
+    body: {
+      id: ticketId
+    }
+  })
+}
 
 const columns = [
   {
@@ -34,8 +50,8 @@ const rows = computed(() =>
     </p>
 
     <UTable :data="rows" :columns="columns" :ui="{ td: 'text-default' }">
-      <template #actions-cell>
-        <UButton icon="i-heroicons-check" label="Godkjenn" />
+      <template #actions-cell="{ row }">
+        <UButton icon="i-heroicons-check" label="Godkjenn" @click="approveRequest(row.original.id)" />
       </template>
     </UTable>
   </UContainer>
